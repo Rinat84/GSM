@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tFuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/fuel"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tFuel" />
+
+    <TextView
+        android:id="@+id/tRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/right"
+        app:layout_constraintEnd_toStartOf="@+id/tDensity"
+        app:layout_constraintStart_toEndOf="@+id/tLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tFuel" />
+
+    <TextView
+        android:id="@+id/tDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/density"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tFuel" />
+
+    <EditText
+        android:id="@+id/eLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeActionId="1"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="5"
+        android:selectAllOnFocus="true"
+        app:layout_constraintStart_toStartOf="@id/tLeft"
+        app:layout_constraintTop_toBottomOf="@+id/tLeft"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/eRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeActionId="2"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="5"
+        android:selectAllOnFocus="true"
+        app:layout_constraintStart_toStartOf="@id/tRight"
+        app:layout_constraintTop_toBottomOf="@id/tRight"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/eDensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeActionId="3"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="6"
+        android:selectAllOnFocus="true"
+        app:layout_constraintStart_toStartOf="@id/tDensity"
+        app:layout_constraintTop_toBottomOf="@id/tDensity"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/sm"
+        app:layout_constraintBottom_toBottomOf="@+id/eLeft"
+        app:layout_constraintStart_toEndOf="@+id/eLeft"
+        app:layout_constraintTop_toTopOf="@+id/eLeft" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/sm"
+        app:layout_constraintBottom_toBottomOf="@+id/eRight"
+        app:layout_constraintStart_toEndOf="@+id/eRight"
+        app:layout_constraintTop_toTopOf="@+id/eRight" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/g_sm3"
+        app:layout_constraintBottom_toBottomOf="@+id/eDensity"
+        app:layout_constraintStart_toEndOf="@+id/eDensity"
+        app:layout_constraintTop_toTopOf="@+id/eDensity" />
+
+    <TextView
+        android:id="@+id/tOutputLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/eLeft"
+        app:layout_constraintTop_toTopOf="@+id/tOutputRight" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/kg"
+        app:layout_constraintBottom_toBottomOf="@+id/tOutputLeft"
+        app:layout_constraintStart_toEndOf="@+id/tOutputLeft"
+        app:layout_constraintTop_toTopOf="@+id/tOutputLeft" />
+
+    <TextView
+        android:id="@+id/tOutputRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/eRight"
+        app:layout_constraintTop_toTopOf="@+id/tOutputExpense" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/kg"
+        app:layout_constraintBottom_toBottomOf="@+id/tOutputRight"
+        app:layout_constraintStart_toEndOf="@+id/tOutputRight"
+        app:layout_constraintTop_toTopOf="@+id/tOutputRight" />
+
+    <TextView
+        android:id="@+id/tExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/expense"
+        app:layout_constraintStart_toStartOf="@+id/eDensity"
+        app:layout_constraintTop_toBottomOf="@+id/eDensity" />
+
+    <TextView
+        android:id="@+id/tOutputExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/eDensity"
+        app:layout_constraintTop_toBottomOf="@+id/tExpense" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/kg"
+        app:layout_constraintBottom_toBottomOf="@+id/tOutputExpense"
+        app:layout_constraintStart_toEndOf="@+id/tOutputExpense"
+        app:layout_constraintTop_toTopOf="@+id/tOutputExpense" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tOutputRight"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/result"
+        android:textAlignment="center"
+        android:textColor="?attr/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/tOutputResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        android:textColor="?attr/colorAccent"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/kg"
+        android:textColor="?attr/colorAccent"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tOutputResult"
+        app:layout_constraintStart_toEndOf="@+id/tOutputResult" />
+
+    <View
+        android:id="@+id/end_fuel"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tOutputResult"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/oil"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/end_oil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_fuel" />
+
+    <EditText
+        android:id="@+id/eOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeOptions="actionNone"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="5"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/end_oil"
+        app:layout_constraintStart_toEndOf="@+id/tOil"
+        app:layout_constraintTop_toBottomOf="@+id/end_fuel"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/sm"
+        app:layout_constraintBottom_toBottomOf="@+id/eOil"
+        app:layout_constraintStart_toEndOf="@+id/eOil"
+        app:layout_constraintTop_toTopOf="@+id/eOil" />
+
+    <TextView
+        android:id="@+id/tOutputOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/zero"
+        android:textAlignment="center"
+        android:textColor="?attr/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/end_oil"
+        app:layout_constraintStart_toEndOf="@+id/eOil"
+        app:layout_constraintTop_toBottomOf="@+id/end_fuel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/kg"
+        android:textColor="?attr/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tOutputOil"
+        app:layout_constraintStart_toEndOf="@+id/tOutputOil"
+        app:layout_constraintTop_toTopOf="@+id/tOutputOil" />
+
+    <View
+        android:id="@+id/end_oil"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_fuel"
+        tools:ignore="SmallSp" />
+
+    <Button
+        android:id="@+id/bCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_oil" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

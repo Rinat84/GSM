@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Калькулятор ГСМ</string>
+    <string name="fuel">Топливо</string>
+    <string name="left">Левый борт</string>
+    <string name="right">Правый борт</string>
+    <string name="density">Плотность</string>
+    <string name="sm">см</string>
+    <string name="g_sm3">г/см3</string>
+    <string name="expense">Расходка</string>
+    <string name="kg">кг</string>
+    <string name="result">Итог</string>
+    <string name="count">Рассчитать</string>
+    <string name="zero">0</string>
+    <string name="oil">Масло</string>
+</resources>
