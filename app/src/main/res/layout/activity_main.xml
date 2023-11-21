@@ -7,6 +7,24 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/g_sm3"
+        app:layout_constraintBottom_toBottomOf="@+id/eDensityOil"
+        app:layout_constraintStart_toEndOf="@+id/eDensityOil"
+        app:layout_constraintTop_toTopOf="@+id/eDensityOil" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/sm"
+        app:layout_constraintBottom_toBottomOf="@+id/eExpense"
+        app:layout_constraintStart_toEndOf="@+id/eExpense"
+        app:layout_constraintTop_toTopOf="@+id/eExpense" />
+
+    <TextView
         android:id="@+id/tFuel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,10 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/right"
-        app:layout_constraintEnd_toStartOf="@+id/tDensity"
+        app:layout_constraintEnd_toStartOf="@+id/tExpense"
         app:layout_constraintStart_toEndOf="@+id/tLeft"
         app:layout_constraintTop_toBottomOf="@+id/tFuel" />
 
@@ -50,12 +67,11 @@
         android:id="@+id/tDensity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/density"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tFuel" />
+        app:layout_constraintStart_toStartOf="@+id/tRight"
+        app:layout_constraintTop_toBottomOf="@+id/eRight" />
 
     <EditText
         android:id="@+id/eLeft"
@@ -100,15 +116,34 @@
         android:ems="3"
         android:fontFamily="@font/roboto_bold"
         android:gravity="end"
-        android:imeActionId="3"
+        android:imeActionId="4"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:maxEms="3"
         android:maxLength="6"
         android:selectAllOnFocus="true"
-        app:layout_constraintStart_toStartOf="@id/tDensity"
+        app:layout_constraintStart_toStartOf="@+id/tDensity"
         app:layout_constraintTop_toBottomOf="@id/tDensity"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/eExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeActionId="3"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="5"
+        android:selectAllOnFocus="true"
+        android:text="@string/seventy"
+        app:layout_constraintStart_toStartOf="@+id/tExpense"
+        app:layout_constraintTop_toBottomOf="@+id/tExpense"
         tools:ignore="LabelFor" />
 
     <TextView
@@ -162,11 +197,12 @@
         android:id="@+id/tOutputRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/zero"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@+id/eRight"
-        app:layout_constraintTop_toTopOf="@+id/tOutputExpense" />
+        app:layout_constraintStart_toStartOf="@+id/tRight"
+        app:layout_constraintTop_toBottomOf="@+id/eDensity" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -183,21 +219,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/expense"
-        app:layout_constraintStart_toStartOf="@+id/eDensity"
-        app:layout_constraintTop_toBottomOf="@+id/eDensity" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tFuel" />
 
     <TextView
         android:id="@+id/tOutputExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/zero"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@+id/eDensity"
-        app:layout_constraintTop_toBottomOf="@+id/tExpense" />
+        app:layout_constraintStart_toStartOf="@+id/eExpense"
+        app:layout_constraintTop_toTopOf="@+id/tOutputRight" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -249,11 +285,10 @@
         android:fontFamily="@font/roboto_bold"
         android:text="@string/zero"
         android:textAlignment="center"
-        android:textColor="?attr/colorAccent"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tResult" />
 
@@ -263,7 +298,7 @@
         android:layout_marginStart="4dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/kg"
-        android:textColor="?attr/colorAccent"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/tOutputResult"
         app:layout_constraintStart_toEndOf="@+id/tOutputResult" />
@@ -285,11 +320,13 @@
         android:id="@+id/tOil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/oil"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/end_oil"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/end_fuel" />
 
@@ -297,7 +334,6 @@
         android:id="@+id/eOil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:ems="3"
         android:fontFamily="@font/roboto_bold"
         android:gravity="end"
@@ -307,9 +343,8 @@
         android:maxEms="3"
         android:maxLength="5"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/end_oil"
-        app:layout_constraintStart_toEndOf="@+id/tOil"
-        app:layout_constraintTop_toBottomOf="@+id/end_fuel"
+        app:layout_constraintStart_toStartOf="@+id/tMetering"
+        app:layout_constraintTop_toBottomOf="@+id/tMetering"
         tools:ignore="LabelFor" />
 
     <TextView
@@ -325,26 +360,27 @@
         android:id="@+id/tOutputOil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginEnd="4dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/zero"
         android:textAlignment="center"
-        android:textColor="?attr/colorAccent"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/end_oil"
-        app:layout_constraintStart_toEndOf="@+id/eOil"
-        app:layout_constraintTop_toBottomOf="@+id/end_fuel" />
+        app:layout_constraintBottom_toBottomOf="@+id/eDensityOil"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/eDensityOil" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/kg"
-        android:textColor="?attr/colorAccent"
+        android:textColor="@color/design_default_color_secondary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/tOutputOil"
-        app:layout_constraintStart_toEndOf="@+id/tOutputOil"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tOutputOil" />
 
     <View
@@ -352,13 +388,13 @@
         android:layout_width="match_parent"
         android:layout_height="1sp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/end_fuel"
+        app:layout_constraintTop_toBottomOf="@+id/eOil"
         tools:ignore="SmallSp" />
 
     <Button
@@ -374,5 +410,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/end_oil" />
+
+    <TextView
+        android:id="@+id/tMetering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/metering"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tDensityOil" />
+
+    <TextView
+        android:id="@+id/tDensityOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/density"
+        app:layout_constraintStart_toEndOf="@+id/tMetering"
+        app:layout_constraintTop_toBottomOf="@+id/tOil" />
+
+    <EditText
+        android:id="@+id/eDensityOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="end"
+        android:imeOptions="actionNone"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxEms="3"
+        android:maxLength="5"
+        android:selectAllOnFocus="true"
+        android:text="@string/oildensity"
+        app:layout_constraintStart_toStartOf="@+id/tDensityOil"
+        app:layout_constraintTop_toBottomOf="@+id/tDensityOil"
+        tools:ignore="LabelFor" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
